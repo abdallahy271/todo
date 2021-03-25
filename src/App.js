@@ -7,10 +7,16 @@ function App() {
 
   const [inputText, setInputText] = useState('')
   const [todos, setTodos] = useState([])
-  const [status, setStatus] = useState("all")
+  const [status, setStatus] = useState("today")
   const [filteredTodos, setFilteredTodos] = useState([])
+  const [startDate, setStartDate ] = useState(new Date())
+  const [endDate, setEndDate ] = useState(new Date())
 
-  
+
+  function daysIntoYear(date){
+    return (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - Date.UTC(date.getFullYear(), 0, 0)) / 24 / 60 / 60 / 1000;
+}
+
   const filterHandler = () => {
     switch(status){
       case 'completed':
@@ -23,11 +29,36 @@ function App() {
           todos.filter(todo => todo.completed === false)
         )
       break
-      default:
+      case 'search':
+        let start = daysIntoYear(startDate)
+        let end = daysIntoYear(endDate)
+        setFilteredTodos(
+          
+          todos.filter((todo) => {
+            let c = daysIntoYear(new Date(todo.createdAt))
+            return(
+            ((start <= c) && (c <= end))
+            )
+          })
+        )
+      break
+      case 'all':
         setFilteredTodos(todos)
+      break
+      default:
+        setFilteredTodos(
+        todos.filter((todo) => {
+          let c = daysIntoYear(new Date(todo.createdAt))
+          return(
+          (c === daysIntoYear(new Date()))
+          )
+        })
+      )
       break
   } 
 }
+
+
 useEffect(() => {
   getLocalTodos()
 },[])
@@ -35,7 +66,7 @@ useEffect(() => {
   useEffect(() => {
     filterHandler();
     saveLocalTodos()
-  },[ todos, status ])
+  },[ todos, status, startDate, endDate, daysIntoYear(new Date()) ])
 
   const saveLocalTodos = () =>{
     
@@ -64,6 +95,10 @@ useEffect(() => {
       setInputText={setInputText} 
       todos={todos} 
       setTodos={setTodos} 
+      startDate={startDate}
+      setStartDate={setStartDate}
+      endDate={endDate} 
+      setEndDate={setEndDate}
       setStatus={setStatus} />
       <TodoList 
       todos={todos} 

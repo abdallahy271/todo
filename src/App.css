@@ -156,3 +156,52 @@ select {
   transform: scale(1.5);
 }
 */
+
+.search {
+  position: absolute;
+  top: 230px;
+  left: 25%;
+  font-size: 2px;
+  /* width: 100vw; */
+}
+
+.search > button {
+  width: 583px;
+  position: absolute;
+  left: 0;
+  top: 353px;
+  border: none;
+  text-transform: inherit !important;
+  background-color: #ff7779;
+  color: white;
+}
+
+.search > button:hover {
+  background-color: white;
+  color: #ff7779;
+}
+
+.rdrDefinedRangesWrapper {
+  width: 150px;
+}
+
+.rdrInputRangeInput {
+  width: 60px;
+  font-size: 1rem;
+}
+
+.rdrDateDisplayItem input {
+  font-size: 1rem;
+}
+
+.rdrMonthAndYearWrapper {
+  height: 40px;
+}
+
+button.rdrNextPrevButton {
+margin: 0 5px;
+}
+
+.rdrMonthAndYearPickers select {
+  width: 10em;
+}

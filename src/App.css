@@ -159,14 +159,14 @@ select {
 
 .search {
   position: absolute;
-  top: 230px;
+  top: 240px;
   left: 25%;
   font-size: 2px;
   /* width: 100vw; */
 }
 
 .search > button {
-  width: 583px;
+  width: 505px;
   position: absolute;
   left: 0;
   top: 353px;

@@ -79,7 +79,8 @@ form button:hover {
 
 .trash-btn,
 .edit-btn,
-.complete-btn {
+.complete-btn,
+.timer-btn {
   background: #ff6f47;
   color: white;
   border: none;
@@ -93,6 +94,17 @@ form button:hover {
   color: black;
 }
 
+.timer-btn{
+  background:rgb(145, 238, 145);
+  color: black;
+}
+
+div .show{
+  display: flex;
+}
+div .hide{
+  display: none;
+}
 .complete-btn {
   background: rgb(11, 212, 162);
 }
@@ -159,7 +171,7 @@ select {
 
 .search {
   position: absolute;
-  top: 240px;
+  top: 242px;
   left: 25%;
   font-size: 2px;
   /* width: 100vw; */
@@ -204,4 +216,38 @@ margin: 0 5px;
 
 .rdrMonthAndYearPickers select {
   width: 10em;
+}
+
+.todo .orange {
+  background-color: orange;
+  transition: background-color 1s ease;
+
+}
+
+.todo .red {
+  background-color: red;
+  transition: background-color 1s ease;
+
+}
+
+.button_container{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700px;
+  flex-direction: column;
+
+}
+
+.button_container button{
+  cursor: pointer;
+  margin: 5px 8px;
+  border-radius: 30px;
+  text-transform: inherit;
+  font-weight: 700px;
+
+}
+
+.timer-wrapper {
+  display: flex;
 }

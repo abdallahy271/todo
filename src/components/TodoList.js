@@ -14,8 +14,9 @@ const TodoList =( { todos, setTodos, filteredTodos} )=>{
                 text={todo.text}/>)
                 
     }
-                
+
             </ul>
+            
         </div>
     )
 }

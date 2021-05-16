@@ -9,6 +9,7 @@ const Form = ({inputText, setInputText, todos, setTodos, setStatus, startDate, s
     const inputTextHandler = (e) => {
         setInputText(e.target.value)
     }
+    console.log(inputText)
 
     const submitTodoHandler = (e) => {
         e.preventDefault()
@@ -25,7 +26,7 @@ const Form = ({inputText, setInputText, todos, setTodos, setStatus, startDate, s
     const statusHandler = (e) => {
       setStatus(e.target.value)
       }
-
+    
     return (
     <form>
     <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
@@ -33,8 +34,8 @@ const Form = ({inputText, setInputText, todos, setTodos, setStatus, startDate, s
       <i className="fas fa-plus-square"></i>
     </button>
 
-    <button type='button' onClick={()=>setShowSearch(!showSearch)}className="todo-button">
-    <DateRangeIcon />
+    <button type='button' onClick={()=>setShowSearch(!showSearch)}className="todo-button" id="calendar">
+      <DateRangeIcon />
     </button>
     {showSearch && 
     <Search 

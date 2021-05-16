@@ -1,37 +1,76 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: content-box !important; */
 }
 body {
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
   color: white;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important; 
   min-height: 100vh;
+
 }
 header {
   font-size: 2rem;
 }
-h3{
-  align-items: center;
-  justify-content: center;
-  display: flex;
 
+@media all and (max-width: 627px) {
+  header {
+    margin-top: 50px;
+
+  }
+}
+
+.madeBy {
+    z-index: -1;
+
+}
+
+.madeBy button{
+  margin-right: 20px;
+  text-align: right;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  border: solid 1px white;
+  border-radius: 30px;
+  padding: 5px 10px;
+  text-transform: none;
 }
 header,
 form {
-  min-height: 20vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 20vh !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
+
+form input{
+  border-radius: 10px 0 0 10px;
+  outline-width: 0;
+  padding-left: 1rem !important;
+  margin-left: 10px !important;
+
+}
+
+#calendar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em 0.5rem;
+}
+
+
 form input,
 form button {
-  padding: 0.5rem;
+  padding: 0.45rem;
   font-size: 2rem;
   border: none;
   background: white;
+
 }
+
+
 .todo input {
   padding: 0rem 0.5rem;
   font-size: 1.5rem;
@@ -39,16 +78,23 @@ form button {
   background: white;
   outline-width: 0;
 }
+
 form button {
   color: #ff6f47;
   background: #f7fffe;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 800ms cubic-bezier(0.215,0.61,0.355,1);  -webkit-transition: all 800ms cubic-bezier(0.215,0.61,0.355,1);
 }
+
 form button:hover {
   background: #ff6f47;
   color: white;
 }
+
+form > button:last-of-type {
+  border-radius: 0 10px 10px 0;
+}
+
 .todo-container {
   display: flex;
   justify-content: center;
@@ -137,6 +183,7 @@ select {
   box-shadow: none;
   border: 0 !important;
   background-image: none;
+
 }
 
 /* Custom Select */
@@ -144,12 +191,13 @@ select {
   margin: 1rem;
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
 }
 select {
   color: #ff6f47;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
-  width: 12rem;
+  width: 11rem;
 }
 /* Arrow */
 .select::after {
@@ -163,18 +211,17 @@ select {
   pointer-events: none;
 }
 /* Transition */
-/*
-.select:hover::after {
+
+/* .select:hover::after {
   transform: scale(1.5);
-}
-*/
+} */
+
 
 .search {
   position: absolute;
   top: 242px;
   left: 25%;
   font-size: 2px;
-  /* width: 100vw; */
 }
 
 .search > button {
@@ -191,7 +238,7 @@ select {
 .search > button:hover {
   background-color: white;
   color: #ff7779;
-}
+  transition: color .0005s cubic-bezier(0.215,0.61,0.355,1),background-color .0005s cubic-bezier(0.215,0.61,0.355,1),}
 
 .rdrDefinedRangesWrapper {
   width: 150px;
@@ -251,3 +298,5 @@ margin: 0 5px;
 .timer-wrapper {
   display: flex;
 }
+
+

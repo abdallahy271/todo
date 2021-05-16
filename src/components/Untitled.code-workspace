@@ -1,0 +1,39 @@
+{
+	"folders": [
+		{
+			"name": "React-RSVP",
+			"path": "../../../React-RSVP"
+		},
+		{
+			"name": "airbnb",
+			"path": "../../../airbnb"
+		},
+		{
+			"name": "chat-app",
+			"path": "../../../chat-app"
+		},
+		{
+			"name": "instagram-clone",
+			"path": "../../../instagram-clone"
+		},
+		{
+			"name": "todo",
+			"path": "../.."
+		},
+		{
+			"name": "amazon",
+			"path": "../../../amazon"
+		},
+		{
+			"name": "athelas",
+			"path": "../../../athelas"
+		},
+		{
+			"path": "../../../TIPP-Admin"
+		},
+		{
+			"path": "../../../www-athelas"
+		}
+	],
+	"settings": {}
+}

@@ -39,7 +39,6 @@ function App() {
           <AllJournals/>
         </Route>
         {journal()}
-        
         <Route path="/book-list">
           <Booklist />
         </Route>
